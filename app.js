@@ -10,6 +10,7 @@ const mainRouter = require('./routes/views/main.routes');
 // const todoRouter = require('./routes/views/tasks.routes');
 // const todoApiRouter = require('./routes/api/tasks.routes');
 const authRouter = require('./routes/views/auth.routes');
+const goodsRouter = require('./routes/views/good.routes');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(mainRouter); // роутер главной страницы
 // app.use('/tasks', todoRouter); // роутер списка задач (все url начинаются с /tasks)
 app.use('/auth', authRouter);
 // app.use('/api/tasks', todoApiRouter); // роутер списка задач (все url начинаются с /tasks)
+app.use('/goods', goodsRouter);
 
 app.use((error, req, res, next) => {
   console.error('Произошла ошибка', error);
