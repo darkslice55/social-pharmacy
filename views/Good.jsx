@@ -1,4 +1,5 @@
 const React = require('react');
+const strLimit = require('../public/js/str-limit');
 
 function Good({ good }) {
   const newPrice = Number(good.price) - Number(good.price) * (Number(good.discont) / 100);
@@ -23,7 +24,7 @@ function Good({ good }) {
 
         <div className="card-body">
           <h3 className="card-title"> <a href={`goods/${good.id}`}> {good.title} </a></h3>
-          <p className="card-text">{good.description}</p>
+          <p className="card-text">{strLimit(good.description, 150)}</p>
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
               <button type="button" className="buy btn btn-outline-secondary">Купить</button>
