@@ -14,9 +14,9 @@ function Layout({ children }) {
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossOrigin="anonymous" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="/theme/css/styles.css" rel="stylesheet" />
+        {/* <link href="/theme/css/styles.css" rel="stylesheet" /> */}
 
-        <link rel="stylesheet" type="text/css" href="/style.css" />
+        {/* <link rel="stylesheet" type="text/css" href="/style.css" /> */}
 
       </head>
       <body id="page-top">

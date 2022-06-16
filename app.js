@@ -10,8 +10,11 @@ const mainRouter = require('./routes/views/main.routes');
 // const todoRouter = require('./routes/views/tasks.routes');
 // const todoApiRouter = require('./routes/api/tasks.routes');
 const authRouter = require('./routes/views/auth.routes');
+const usersRouter = require('./routes/api/cabinet.routes');
+const ordersRouter = require('./routes/api/orders.routes');
 const goodsRouter = require('./routes/views/good.routes');
 const goodsApiRouter = require('./routes/api/good.routes');
+
 
 const app = express();
 
@@ -22,6 +25,10 @@ expressConfig(app);
 app.use(mainRouter); // роутер главной страницы
 // app.use('/tasks', todoRouter); // роутер списка задач (все url начинаются с /tasks)
 app.use('/auth', authRouter);
+app.use('/users', usersRouter);
+app.use('/orders', ordersRouter);
+
+
 // app.use('/api/tasks', todoApiRouter); // роутер списка задач (все url начинаются с /tasks)
 app.use('/goods', goodsRouter);
 app.use('/api/goods', goodsApiRouter);
@@ -34,4 +41,4 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(3000, () => 'server started at 3000');
+app.listen(3000, () => console.log('server started at 3000'));
