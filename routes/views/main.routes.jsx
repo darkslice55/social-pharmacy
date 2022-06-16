@@ -12,8 +12,6 @@ mainRouter.get('/', async (req, res) => {
         ['createdAt', 'DESC'],
       ],
     });
-    console.log(goods);
-
     res.renderComponent(Main, { goods });
   } catch (error) {
     res.redirect('/error');

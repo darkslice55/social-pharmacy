@@ -44,9 +44,8 @@ function Header() {
           <div className="row align-items-center">
             <div className="col-5 col-sm-3 col-md-3 col-lg-2">
               <div className="header-logo-area">
-                <a href="index.html">
+                <a href="/">
                   <img className="logo-main" src="logo.svg" alt="Logo" />
-                  <img className="logo-light" src="assets/img/logo.png" alt="Logo" />
                 </a>
               </div>
             </div>
