@@ -20,7 +20,7 @@ module.exports = {
         allowNull: false,
       },
       snils: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,

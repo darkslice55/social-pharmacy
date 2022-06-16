@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     snils: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
     },
     createdAt: {
       allowNull: false,

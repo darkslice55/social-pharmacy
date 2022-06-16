@@ -5,7 +5,7 @@ module.exports = {
       description: 'Таблетки белого цвета, круглые, плоскоцилиндрические, с фаской и риской на одной стороне. 1 таб. парацетамол 500 мг, дицикловерина гидрохлорид 20 мг. 10 шт. - блистеры (1) - пачки картонные.',
       price: '900',
       amount: '3',
-      img: '/public/img/trigan.gif',
+      img: '/img/trigan.gif',
       createdAt: new Date(),
       updatedAt: new Date(),
     }, {
@@ -13,7 +13,7 @@ module.exports = {
       description: 'Таблетки белого цвета, круглые, плоскоцилиндрические, с фаской и риской на одной стороне. 1 таб. парацетамол 500 мг, дицикловерина гидрохлорид 20 мг. 10 шт. - блистеры (1) - пачки картонные.',
       price: '125',
       amount: '4',
-      img: '/public/img/lirika_150.gif',
+      img: '/img/lirika_150.gif',
       createdAt: new Date(),
       updatedAt: new Date(),
     }, {
@@ -21,7 +21,7 @@ module.exports = {
       description: 'Таблетки белого цвета, круглые, плоскоцилиндрические, с фаской и риской на одной стороне. 1 таб. парацетамол 500 мг, дицикловерина гидрохлорид 20 мг. 10 шт. - блистеры (1) - пачки картонные.',
       price: '1999',
       amount: '1',
-      img: '/public/img/trigan.gif',
+      img: '/img/trigan.gif',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});
