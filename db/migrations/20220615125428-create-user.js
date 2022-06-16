@@ -20,7 +20,11 @@ module.exports = {
         allowNull: false,
       },
       snils: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
+      },
+      isAdmin: {
+        type: Sequelize.BOOLEAN,
+        default: false,
       },
       createdAt: {
         allowNull: false,

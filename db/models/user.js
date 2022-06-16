@@ -33,7 +33,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     snils: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      default: false,
     },
     createdAt: {
       allowNull: false,

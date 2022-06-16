@@ -26,6 +26,10 @@ module.exports = {
       img: {
         type: Sequelize.TEXT,
       },
+      discont: {
+        type: Sequelize.DECIMAL,
+        default: 0,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

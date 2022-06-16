@@ -39,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
     img: {
       type: DataTypes.TEXT,
     },
+    discont: {
+      type: DataTypes.DECIMAL,
+      default: 0,
+    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
