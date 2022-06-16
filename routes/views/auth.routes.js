@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 const { User } = require('../../db/models');
 const Login = require('../../views/Login');
 const Register = require('../../views/Register');
+const nodemailer = require('nodemailer')
 
 authRouter
   .route('/register')
@@ -42,7 +43,43 @@ authRouter
     // console.log(fullname, snils, email, password);
     req.session.userId = user.id;
     res.app.locals.user = user;
-    console.log(res.locals.user);
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'danil88tmn@gmail.com',
+        pass: 'Kjrjvjnbd77',
+      },
+    });
+    try {
+      await transporter.sendMail({
+        from: '"Аптека Черепаха" <cherepaha.pharmacy@gmail.com>',
+        to: mail,
+        subject: 'Attachments',
+        text: 'This message with attachments.',
+        html:
+          'This <i>message</i> with <strong>attachments</strong>.',
+        // attachments: [
+        //   { filename: 'greetings.txt', path: '/assets/files/' },
+        //   {
+        //     filename: 'greetings.txt',
+        //     content: 'Message from file.',
+        //   },
+        //   { path: 'data:text/plain;base64,QmFzZTY0IG1lc3NhZ2U=' },
+        //   {
+        //     raw: `
+        //         Content-Type: text/plain
+        //         Content-Disposition: attachment;
+      
+        //         Message from file.
+        //       `,
+        //   },
+        // ],
+      });
+    } catch (err) {
+      console.log(err);
+    }
+
+
     res.send({ success: true });
   });
 
