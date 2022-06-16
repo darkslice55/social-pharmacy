@@ -11,16 +11,27 @@ function Order({ orders }) {
       <a className="btn btn-primary btn-xl" href="/auth/logout">Log out</a>&nbsp;&nbsp;&nbsp;
       <a className="btn btn-primary btn-xl" href="/">HOME</a>
       {/* <ul className="goods list-group"> */}
+      <br></br>
       <h1 className="btn btn-primary btn-xl" >Ваш список заказов</h1>
       <br></br>
 
       <ul className="goods list-group">
         {orders.map((orderOne) => (
           <li>
-            <a className="btn btn-primary btn-xl" href={`/orders/${orderOne.id}/goods`} key={orderOne.id} good={orderOne}>{`Заказ № ${orderOne.id} на сумму ${orderOne.total_price}`}</a>
+            <a className={'btn btn-primary btn-xl buttonOforderList'}
+              data-id={orderOne.id}
+              href={`/orders/${orderOne.id}/goods`}
+              key={orderOne.id}>
+              {`Заказ № ${orderOne.id} на сумму ${orderOne.total_price}`}
+            </a>
+            <br></br>
           </li>
         ))}
+        <div className="orderList">
+
+        </div>
       </ul>
+      <script defer src="../../js/order-goods-list.js" />
     </Layout>
   );
 }
