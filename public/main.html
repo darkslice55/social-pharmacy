@@ -6,25 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </link>
-  <link rel="stylesheet" href="./stylesheets/style.css" />
+  <link rel="stylesheet" href="./stylesheets/style.css" /> -->
+  
+    <!--== Google Fonts ==-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,700,900,900i" rel="stylesheet">
+
+    <!--== Bootstrap CSS ==-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--== Font-awesome Icons CSS ==-->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--== Icofont Min Icons CSS ==-->
+    <link href="assets/css/icofont.min.css" rel="stylesheet"/>
+    <!--== Fontello CSS ==-->
+    <link href="assets/css/fontello.css" rel="stylesheet"/>
+    <!--== Vandella CSS ==-->
+    <link href="assets/css/font-vandella.css" rel="stylesheet"/>
+    <!--== Animate CSS ==-->
+    <link href="assets/css/animate.css" rel="stylesheet"/>
+    <!--== Aos CSS ==-->
+    <link href="assets/css/aos.css" rel="stylesheet"/>
+    <!--== FancyBox CSS ==-->
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet"/>
+    <!--== Slicknav CSS ==-->
+    <link href="assets/css/slicknav.css" rel="stylesheet"/>
+    <!--== Swiper CSS ==-->
+    <link href="assets/css/swiper.min.css" rel="stylesheet"/>
+    <!--== Main Style CSS ==-->
+    <link href="assets/css/style.css" rel="stylesheet" />
   <title>Social pharmacy</title>
 </head>
 
-<header class="sticky-top">
+<!-- <header class="sticky-top">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid ">
       <div class="text-center">
-        <img class="logoImage" src="./logo.png" class="rounded" alt="pharmacy">
+        <img class="logoImage" src="./logo.svg" class="rounded" alt="pharmacy">
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <!-- div search + order + bascket + logIn -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,8 +69,81 @@
       </div>
     </div>
   </nav>
+</header> -->
+<header class="header-wrapper">
+  <div class="header-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <div class="header-info"><a href="tel:+1234567890"> +7 123 456 7890 </a></div>
+          
+        </div>
+        <div class="col-6">
+          <div class="header-top-nav">
+            <ul>
+              <li><a href="#">Вход</a></li>
+              <li><a href="#">Регистрация</a></li>
+              <!-- <li><a href="#">cart</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-area header-default sticky-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-5 col-sm-3 col-md-3 col-lg-2">
+          <div class="header-logo-area">
+            <a href="index.html">
+              <img class="logo-main" src="logo.svg" alt="Logo" />
+              <img class="logo-light" src="assets/img/logo.png" alt="Logo" />
+            </a>
+          </div>
+        </div>
+        <div class="col-7 col-sm-9 col-md-9 col-lg-10">
+          <div class="header-align">
+            <div class="header-navigation-area">
+              <ul class="main-menu nav justify-content-center">
+                <li class="has-submenu active"><a href="index.html">Домой</a></li>                
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="header-action-area">
+              <div class="header-action-search header-search-rs">
+                <div class="btn-search-content">
+                  <form action="#" method="post">
+                    <div class="form-input-item">
+                      <label for="search" class="sr-only">Поиск товара</label>
+                      <input type="text" id="search" placeholder="Search our store">
+                      <button type="submit" class="btn-src">
+                        <i class="icofont-search-1"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="header-action-cart">
+                <a class="cart-icon" href="javascript:void(0);">
+                  <i class="icofont-shopping-cart"></i>
+                </a>
+              </div>
+              <button class="btn-menu btn-menu-rs d-xl-none">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 <!-- TITLE FILTER PRODUCT -->
+
+
 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
   <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
   <label class="btn btn-outline-primary" for="btncheck1">SORT 0 to 10</label>
