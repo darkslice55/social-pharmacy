@@ -9588,3 +9588,43 @@ table p {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
+
+.price-text {
+  margin-bottom: 0px;
+}
+
+.price-value {
+  margin-bottom: 0px;
+  font-size: 2em;
+  line-height: 1;
+}
+
+.oldprice-value {
+  text-decoration: line-through;
+}
+
+.card-stock {
+  padding: 2px 4px;
+  left: 10px;
+  top: 10px;
+  background-color: #fff;
+  line-height: 1;
+  border-radius: 3px;
+  position: absolute;
+}
+
+.stock {
+  color:#008000;
+}
+
+.stock-none {
+  color:#ce1f21;
+}
+
+.card_img {
+  margin: 5px;
+}
+
+.hidden {
+  display: none;
+}

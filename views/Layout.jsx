@@ -37,8 +37,9 @@ function Layout({ children }) {
 
         <link href="/assets/css/style.css" rel="stylesheet" />
 
+        <script defer src="/js/main.js" />
+
         {/* <link rel="stylesheet" type="text/css" href="/style.css" /> */}
-        
 
       </head>
       <body id="page-top">

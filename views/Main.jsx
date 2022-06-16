@@ -21,16 +21,16 @@ function Main({ goods }) {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <div className="form-check nav-link">
-                      <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      <label className="form-check-label" htmlFor="flexCheckDefault">
+                      <input className="form-check-input" type="checkbox" value="" id="inStock" />
+                      <label className="form-check-label" htmlFor="inStock">
                         в наличии
                       </label>
                     </div>
                   </li>
                   <li className="nav-item">
                     <div className="form-check nav-link">
-                      <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      <label className="form-check-label" htmlFor="flexCheckDefault">
+                      <input className="form-check-input" type="checkbox" value="" id="discount" />
+                      <label className="form-check-label" htmlFor="discount">
                         скидки
                       </label>
                     </div>
