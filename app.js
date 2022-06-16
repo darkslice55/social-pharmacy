@@ -11,6 +11,7 @@ const mainRouter = require('./routes/views/main.routes');
 // const todoApiRouter = require('./routes/api/tasks.routes');
 const authRouter = require('./routes/views/auth.routes');
 const goodsRouter = require('./routes/views/good.routes');
+const goodsApiRouter = require('./routes/api/good.routes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(mainRouter); // роутер главной страницы
 app.use('/auth', authRouter);
 // app.use('/api/tasks', todoApiRouter); // роутер списка задач (все url начинаются с /tasks)
 app.use('/goods', goodsRouter);
+app.use('/api/goods', goodsApiRouter);
 
 app.use((error, req, res, next) => {
   console.error('Произошла ошибка', error);

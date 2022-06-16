@@ -4,63 +4,19 @@ const {
   User, Order, Basket, Good,
 } = require('../../db/models');
 const Main = require('../../views/Main');
-const NewGood = require('../../views/NewGood');
 
 goodsRouter
-  .route('/')
-  .get(async (req, res) => {
-    // console.log(req.locals.user.fullname);
-    // res.renderComponent(Main);
-    try {
-      const goods = await Good.findAll({
-        order: [
-          ['createdAt', 'DESC'],
-        ],
-      });
-      // console.log(goods);
-
-      res.renderComponent(Main, { goods });
-    } catch (error) {
-      res.redirect('/error');
-    }
-  })
-  .post(async (req, res) => {
-  });
-
-goodsRouter
-  .route('/error')
-  .get((req, res) => {
-    res.renderComponent(Error);
-  });
-
-// goodsRouter
-//   .route('/:id')
-//   .get(async (req, res) => {
-//     const good = await Good.findByPk(Number(req.params.id));
-//     res.send(good);
-//   })
-//   .post((req, res) => {
-//  вылетает ошибка
-//   });
-
-goodsRouter
-  .route('/:id/edit')
-  .get(async (req, res) => {
+  .route('/:id')
+  .put(async (req, res) => {
     const good = await Good.findByPk(Number(req.params.id));
-    res.send(good);
-  })
-  .post((req, res) => {
-
+    if ('title' in req.body) good.title = req.body.title;
+    if ('description' in req.body) good.description = req.body.description;
+    if ('price' in req.body) good.price = req.body.price;
+    if ('amount' in req.body) good.img = req.body.img;
+    if ('discont' in req.body) good.discont = req.body.discont;
+    await good.save();
   });
 
-goodsRouter
-  .route('/new')
-  .get(async (req, res) => {
-    res.renderComponent(NewGood);
-  })
-  .post((req, res) => {
-
-  });
 module.exports = goodsRouter;
 // goodsRouter
 //   .route()
