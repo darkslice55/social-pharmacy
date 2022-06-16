@@ -35,6 +35,10 @@ module.exports = (sequelize, DataTypes) => {
     snils: {
       type: DataTypes.TEXT,
     },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      default: false,
+    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
