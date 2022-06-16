@@ -11,6 +11,7 @@ const mainRouter = require('./routes/views/main.routes');
 // const todoApiRouter = require('./routes/api/tasks.routes');
 const authRouter = require('./routes/views/auth.routes');
 const usersRouter = require('./routes/api/cabinet.routes');
+const ordersRouter = require('./routes/api/orders.routes');
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(mainRouter); // роутер главной страницы
 // app.use('/tasks', todoRouter); // роутер списка задач (все url начинаются с /tasks)
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
+app.use('/orders', ordersRouter);
+
 
 // app.use('/api/tasks', todoApiRouter); // роутер списка задач (все url начинаются с /tasks)
 

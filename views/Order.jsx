@@ -10,10 +10,16 @@ function Order({ orders }) {
       <a className="btn btn-primary btn-xl" href={`/users/${user.id}`}>{user.fullname}</a>&nbsp;&nbsp;&nbsp;
       <a className="btn btn-primary btn-xl" href="/auth/logout">Log out</a>&nbsp;&nbsp;&nbsp;
       <a className="btn btn-primary btn-xl" href="/">HOME</a>
+      {/* <ul className="goods list-group"> */}
+      <h1 className="btn btn-primary btn-xl" >Ваш список заказов</h1>
+      <br></br>
+
       <ul className="goods list-group">
-        <h1 className="btn btn-primary btn-xl" >Ваш список заказов</h1>
-        <br></br>
-        <a className="btn btn-primary btn-xl">{`total_price: ${orders[0].total_price}`}</a>
+        {orders.map((orderOne) => (
+          <li>
+            <a className="btn btn-primary btn-xl" href={`/orders/${orderOne.id}/goods`} key={orderOne.id} good={orderOne}>{`Заказ № ${orderOne.id} на сумму ${orderOne.total_price}`}</a>
+          </li>
+        ))}
       </ul>
     </Layout>
   );
