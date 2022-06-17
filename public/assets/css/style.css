@@ -9621,10 +9621,32 @@ table p {
   color:#ce1f21;
 }
 
-.card_img {
+/* .card_img {
   margin: 5px;
-}
+} */
 
 .hidden {
   display: none;
+}
+
+.card-block {
+  width: 80%; 
+  height: 300px; 
+  border-radius: 21px 21px 0 0;
+}
+
+.stock-card {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.free-price {
+  padding: 2px 4px;
+  left: 10px;
+  top: 33px;
+  background-color:#c32026;
+  line-height: 1;
+  border-radius: 3px;
+  position: absolute;
+  color: whitesmoke;
 }

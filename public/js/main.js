@@ -14,7 +14,6 @@ document.querySelector('#inStock').addEventListener('click', (event) => {
 });
 
 document.querySelector('#discount').addEventListener('click', (event) => {
-  console.log('click on ', event.target.checked);
   if (event.target.checked) {
     document.querySelectorAll('.good').forEach((card) => {
       console.log(Number(card.dataset.discont));
@@ -28,3 +27,22 @@ document.querySelector('#discount').addEventListener('click', (event) => {
     });
   }
 });
+
+document.querySelector('.search').addEventListener('submit', (event) => {
+  event.preventDefault();
+});
+
+document.querySelector('.search').addEventListener('input', (event) => {
+  document.querySelectorAll('.good').forEach((card) => {
+    const title = card.querySelector('.card-title').innerText;
+    if (event.target.value) {
+      if (!title.toLowerCase().includes(event.target.value.toLowerCase())) {
+        card.classList.add('hidden');
+      }
+    } else {
+      card.classList.remove('hidden');
+    }
+  });
+});
+
+

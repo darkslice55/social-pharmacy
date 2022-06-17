@@ -44,20 +44,22 @@ function Main({ goods }) {
                     </ul>
                   </li>
                 </ul>
-                <form role="search">
-                  <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                <form role="search" className="search">
+                  <input className="form-control search" type="search" placeholder="Search" aria-label="Search" />
                 </form>
               </div>
             </div>
           </nav>
 
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div className="card-list row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {goods.map((good) => (
               <Good key={good.id} good={good} />
             ))}
           </div>
         </div>
       </div>
+      <script defer src="/js/main.js" />
+      <script defer src="/js/good.js" />
 
     </Layout>
   );
