@@ -2,6 +2,7 @@ const goodsRouter = require('express').Router();
 const {
   User, Order, Basket, Good,
 } = require('../../db/models');
+const GoodsList = require('../../views/MainGoodList');
 
 goodsRouter
   .route('/:id')
@@ -21,7 +22,6 @@ goodsRouter
       },
     });
   });
-
 goodsRouter
   .route('/:id/order')
   .post(async (req, res) => {
@@ -85,5 +85,21 @@ goodsRouter
       next(er);
     }
   });
+
+goodsRouter
+  .route('/sort/:dir')
+  .get(async (req, res) => {
+    const direct = req.params.dir === 'up' ? 'DESC' : 'ASC';
+    console.log(direct);
+    const goodsList = await Good.findAll({
+      order: [
+        ['price', direct],
+      ],
+    });
+    console.log(goodsList);
+    const listOfGoods = res.renderComponent(GoodsList, { goodsList });
+    res.end(listOfGoods);
+  });
+
 
 module.exports = goodsRouter;

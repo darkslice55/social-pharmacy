@@ -1,12 +1,10 @@
 const authRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
-// const nodemailer = require('nodemailer');
 const nodeoutlook = require('nodejs-nodemailer-outlook');
 const { User } = require('../../db/models');
 const Login = require('../../views/Login');
 const Register = require('../../views/Register');
-const fs = require('fs');
 
 authRouter
   .route('/register')
@@ -52,6 +50,7 @@ authRouter
         user: 'cherepaha.pharmacy@outlook.com',
         pass: 'OyA1{VkPs3ye',
       },
+
       from: 'cherepaha.pharmacy@outlook.com',
       to: mail,
       subject: 'Hey you, awesome!',

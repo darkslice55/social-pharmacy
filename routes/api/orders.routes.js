@@ -18,9 +18,7 @@ ordersRouter.get('/:id/goods', async (req, res) => {
     objGood.amount = obj['Good.id'];
     return objGood;
   });
-  
   console.log('<<<--->>> goodsList:', goodsList);
-  
   const listOfGoods = res.renderComponent(GoodsList, { goodsList });
   console.log('<<<--->>> listOfGoods', listOfGoods);
   res.end(listOfGoods);
