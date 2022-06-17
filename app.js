@@ -14,7 +14,7 @@ const usersRouter = require('./routes/api/cabinet.routes');
 const ordersRouter = require('./routes/api/orders.routes');
 const goodsRouter = require('./routes/views/good.routes');
 const goodsApiRouter = require('./routes/api/good.routes');
-
+// const basketRouter = require('./routes/views/basket.routes');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(mainRouter); // роутер главной страницы
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/orders', ordersRouter);
-
+// app.use('/basket', basketRouter);
 
 // app.use('/api/tasks', todoApiRouter); // роутер списка задач (все url начинаются с /tasks)
 app.use('/goods', goodsRouter);

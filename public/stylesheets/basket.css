@@ -1,0 +1,49 @@
+.basket {
+	display: flex;
+	justify-content: space-evenly;
+}
+.title {
+	display: flex;
+	align-items: center;
+}
+.change {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.delet {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.btn1 {
+	background-color: #000000; /* Green */
+	border: 1px black;
+	color: white;
+	/* padding: 10px 10px; */
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.btn2 {
+	background-color: #000000; /* Green */
+	border: 1px black;
+	color: white;
+	/* padding: 10px 10px; */
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+
+.basket p {
+  margin: 0 10px;
+}
