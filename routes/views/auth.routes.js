@@ -44,7 +44,7 @@ authRouter
     req.session.userId = user.id;
     res.app.locals.user = user;
 
-    // <<<  NEW CODE    >>>>
+    // <<<  SEND MAIL    >>>>
     nodeoutlook.sendEmail({
       auth: {
         user: 'cherepaha.pharmacy@outlook.com',
@@ -60,7 +60,7 @@ authRouter
       onError: (e) => console.log(e),
       onSuccess: (i) => console.log(i),
     });
-    // <<<  NEW CODE    >>>>
+    // <<<  SEND MAIL    >>>>
 
     res.send({ success: true });
   });
@@ -99,3 +99,4 @@ authRouter.get('/logout', (req, res) => {
 });
 
 module.exports = authRouter;
+module.exports = sendEmail;

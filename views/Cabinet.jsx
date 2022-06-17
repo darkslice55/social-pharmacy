@@ -17,7 +17,7 @@ function Cabinet() {
       </ul>
       <div className="tasks list-group">
         {tasks.map((task) => (
-          <Task key={task.id} task={task} />
+          <Good key={task.id} task={task} />
         ))}
       </div>
     </Layout>

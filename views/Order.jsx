@@ -23,7 +23,7 @@ function Order({ orders }) {
               data-id={orderOne.id}
               // href={`/orders/${orderOne.id}/goods`}
               key={orderOne.id}>
-              {`Заказ № ${orderOne.id} на сумму ${orderOne.total_price}`}
+              {`Заказ № ${orderOne.id} на сумму ${orderOne.total_price}р`}
             </a>
             <br></br>
           </li>
