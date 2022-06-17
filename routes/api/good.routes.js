@@ -2,7 +2,7 @@ const goodsRouter = require('express').Router();
 const {
   User, Order, Basket, Good,
 } = require('../../db/models');
-const GoodsList = require('../../views/GoodsList');
+const GoodsList = require('../../views/MainGoodList');
 
 goodsRouter
   .route('/:id')
@@ -22,7 +22,6 @@ goodsRouter
       },
     });
   });
-
 goodsRouter
   .route('/:id/order')
   .post(async (req, res) => {
