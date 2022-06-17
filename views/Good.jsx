@@ -28,6 +28,11 @@ function Good({ good }) {
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
               <button type="button" className="buy btn btn-outline-secondary">Купить</button>
+              <div className="amount-block hidden btn-group">
+                <button type="button" className="minus btn btn-outline-secondary">-</button>
+                <input className="form-control amount" disabled type="number" value="1" aria-label="количество товаров" max={`${good.amount}`} min="0" />
+                <button type="button" className="plus btn btn-outline-secondary">+</button>
+              </div>
               {/* <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button> */}
             </div>
             <div className="price">

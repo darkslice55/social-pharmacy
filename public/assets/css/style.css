@@ -9607,7 +9607,7 @@ table p {
   padding: 2px 4px;
   left: 10px;
   top: 10px;
-  background-color: #fff;
+  background-color:#e8e8e8;
   line-height: 1;
   border-radius: 3px;
   position: absolute;
@@ -9621,9 +9621,9 @@ table p {
   color:#ce1f21;
 }
 
-/* .card_img {
-  margin: 5px;
-} */
+.card_img {
+  height: 200px;
+}
 
 .hidden {
   display: none;
@@ -9649,4 +9649,17 @@ table p {
   border-radius: 3px;
   position: absolute;
   color: whitesmoke;
+}
+
+.amount {
+  max-width: 70px;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.form-check-input {
+  margin-top: 8px;
+  margin-right: 10px;
 }
