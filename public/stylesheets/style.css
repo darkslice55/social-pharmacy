@@ -1,0 +1,24 @@
+body{
+  /* background: url('https://globalcarehospital.com/wp-content/uploads/2020/04/arredi-farmacie-min-olcdbjm9lkfarlthxu7qceilefhwmv8ravp8czhnr4-1024x512.jpg'); */
+  background-color: beige;
+}
+
+.logoImage{
+  width: 80px;
+  height: auto;
+}
+
+.card-product{
+  max-width: 250px;
+  /* height: 5em; */
+  object-fit: cover;
+}
+
+.item-picture {
+  background: center/cover no-repeat url('../logo-1.png');
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+
