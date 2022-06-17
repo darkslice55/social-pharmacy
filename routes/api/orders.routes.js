@@ -17,11 +17,7 @@ ordersRouter.get('/:id/goods', async (req, res) => {
     objGood.amount = obj['Good.amount'];
     return objGood;
   });
-  
-  // обратиться в map по id goods к базе good -> вернут массив имён с именем и стоимсотью
-  
   console.log('<<<--->>> goodsList:', goodsList);
-  
   const listOfGoods = res.renderComponent(GoodsList, { goodsList });
   console.log('<<<--->>> listOfGoods', listOfGoods);
   res.end(listOfGoods);

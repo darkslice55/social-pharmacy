@@ -16,8 +16,38 @@ goodsRouter
         ],
       });
 
+      const currentUser = res.app.locals.user;
+      let currentBasket;
+      if (currentUser) {
+        const currentOrder = await Order.findOne({
+          where: {
+            user_id: currentUser.id,
+            is_done: false,
+          },
+        });
+        if (currentOrder) {
+          currentBasket = await Basket.findAll({
+            raw: true,
+            where: {
+              order_id: currentOrder.id,
+            },
+          });
+          console.log(currentBasket);
+        }
+      }
+      if (currentBasket) {
+        goods.forEach((good) => {
+          for (let i = 0; i < currentBasket.length; i += 1) {
+            if (good.id === currentBasket[i].good_id) {
+              good.basket_amount = currentBasket[i].total_amount;
+            }
+          }
+        });
+      }
+
       res.renderComponent(Main, { goods });
     } catch (error) {
+      console.log(error);
       res.redirect('/error');
     }
   })
@@ -33,7 +63,6 @@ goodsRouter
 goodsRouter
   .route('/:id')
   .get(async (req, res) => {
-    console.log('IDDDDD', req.params.id);
     const good = await Good.findByPk(Number(req.params.id));
     console.log(good);
     res.renderComponent(GoodLong, { good });

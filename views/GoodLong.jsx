@@ -7,7 +7,7 @@ function GoodLong({ good }) {
   return (
     <Layout>
       <Header />
-      <div className="col good" data-discont={`${good.discont ?? 0}`} data-amount={`${good.amount}`}>
+      <div className="col good" data-discont={`${good.discont ?? 0}`} data-amount={`${good.amount}`}  data-id={`${good.id}`}>
         <div className="container">
           <div className="card shadow-sm">
             <div className="row row-cols-2">
@@ -20,7 +20,12 @@ function GoodLong({ good }) {
                   <p className="card-text">{good.description}</p>
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
-                      <button type="button" className="btn btn-outline-secondary">Купить</button>
+                      <button type="button" className="buy btn btn-outline-secondary">Купить</button>
+                      <div className="amount-block hidden btn-group">
+                        <button type="button" className="minus btn btn-outline-secondary">-</button>
+                        <input className="form-control amount" disabled type="number" value="1" aria-label="количество товаров" max={`${good.amount}`} min="0" />
+                        <button type="button" className="plus btn btn-outline-secondary">+</button>
+                      </div>
                     </div>
                     {good.amount ? (
                       <p className="stock-card">В наличии {`${good.amount}`} ед.</p>
@@ -39,6 +44,7 @@ function GoodLong({ good }) {
           </div>
         </div>
       </div>
+      <script defer src="/js/good.js" />
     </Layout>
   );
 }

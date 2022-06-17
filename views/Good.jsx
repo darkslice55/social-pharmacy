@@ -26,15 +26,25 @@ function Good({ good }) {
           <h3 className="card-title"> <a href={`goods/${good.id}`}> {good.title} </a></h3>
           <p className="card-text">{strLimit(good.description, 150)}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <div className="btn-group">
-              <button type="button" className="buy btn btn-outline-secondary">Купить</button>
-              <div className="amount-block hidden btn-group">
-                <button type="button" className="minus btn btn-outline-secondary">-</button>
-                <input className="form-control amount" disabled type="number" value="1" aria-label="количество товаров" max={`${good.amount}`} min="0" />
-                <button type="button" className="plus btn btn-outline-secondary">+</button>
+            {good.basket_amount ? (
+                <div className="btn-group">
+                  <button type="button" className="buy btn btn-outline-secondary hidden">Купить</button>
+                  <div className="amount-block btn-group">
+                    <button type="button" className="minus btn btn-outline-secondary">-</button>
+                    <input className="form-control amount" disabled type="number" value={`${good.basket_amount}`} aria-label="количество товаров" max={`${good.amount}`} min="0" />
+                    <button type="button" className="plus btn btn-outline-secondary">+</button>
+                  </div>
+                </div>
+            ) : (
+              <div className="btn-group">
+                <button type="button" className="buy btn btn-outline-secondary">Купить</button>
+                <div className="amount-block btn-group hidden">
+                  <button type="button" className="minus btn btn-outline-secondary">-</button>
+                  <input className="form-control amount" disabled type="number" value="1" aria-label="количество товаров" max={`${good.amount}`} min="0" />
+                  <button type="button" className="plus btn btn-outline-secondary">+</button>
+                </div>
               </div>
-              {/* <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button> */}
-            </div>
+            )}
             <div className="price">
               <p className="price-text">Цена: {good.discont && (
                 <span className="oldprice-value"> {`${good.price}`}₽ </span>

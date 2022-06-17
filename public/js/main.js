@@ -47,9 +47,24 @@ document.querySelector('.search').addEventListener('input', (event) => {
 
 const sortButton = document.querySelector('.sort');
 
-// if (sortButton) {
-//   sortButton.addEventListener('click', (event) => {
-//     event.preventDefault();
-
-//   });
-// }
+if (sortButton) {
+  sortButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const { direct } = sortButton.dataset;
+    console.log(`/api/goods/sort/${direct}`);
+    sortButton.dataset.direct = direct === 'up' ? 'down' : 'up';
+    const response = await fetch(`/api/goods/sort/${direct}`, {
+      method: 'GET',
+    });
+    const answer = await response.text();
+    // console.log(answer);
+    document.querySelector('.card-list').innerHTML = answer;
+    // if (!answer.isLogged) {
+    //   window.location = '/auth/login';
+    // }
+    // if (answer.success) {
+    //   button.classList.add('hidden');
+    //   button.closest('.good').querySelector('.amount-block').classList.remove('hidden');
+    // }
+  });
+}

@@ -25,6 +25,7 @@ document.querySelectorAll('.plus').forEach((plus) => {
     let currentAmount = Number(plus.closest('.amount-block').querySelector('.amount').value);
     const maxAmount = Number(plus.closest('.good').dataset.amount);
     plus.closest('.amount-block').querySelector('.amount').value = currentAmount = currentAmount === maxAmount ? maxAmount : currentAmount + 1;
+    console.log(currentAmount);
     const response = await fetch(`/api/goods/${goodId}/order`, {
       method: 'PUT',
       body: JSON.stringify({
