@@ -45,4 +45,11 @@ document.querySelector('.search').addEventListener('input', (event) => {
   });
 });
 
+const sortButton = document.querySelector('.sort');
 
+// if (sortButton) {
+//   sortButton.addEventListener('click', (event) => {
+//     event.preventDefault();
+
+//   });
+// }

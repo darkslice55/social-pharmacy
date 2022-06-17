@@ -79,6 +79,7 @@ function Register() {
               </label>
             </div> */}
             <button className="w-100 btn btn-lg btn-primary" type="submit">Зарегистрироваться</button>
+            <a href="/auth/login">Войти</a>
           </form>
         </main>
         <script defer src="/js/imask.js" />
