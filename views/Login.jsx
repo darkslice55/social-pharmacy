@@ -19,7 +19,7 @@ function Login() {
         <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json" />
         <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9" />
-        <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="theme-color" content="#712cf9" />
         <link href="/assets/css/signin.css" rel="stylesheet" />
       </head>
