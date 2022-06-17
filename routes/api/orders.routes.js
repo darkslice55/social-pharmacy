@@ -15,16 +15,35 @@ ordersRouter.get('/:id/goods', async (req, res) => {
     objGood.title = obj['Good.title'];
     objGood.price = obj['Good.price'];
     objGood.amount = obj['Good.amount'];
+    objGood.amount = obj['Good.id'];
     return objGood;
   });
-  
-  // обратиться в map по id goods к базе good -> вернут массив имён с именем и стоимсотью
-  
   console.log('<<<--->>> goodsList:', goodsList);
-  
   const listOfGoods = res.renderComponent(GoodsList, { goodsList });
   console.log('<<<--->>> listOfGoods', listOfGoods);
   res.end(listOfGoods);
+});
+
+ordersRouter.delete('/:id/goods/del', async (req, res, next) => {
+  try {
+    // удаляем задачу с заданным id
+    const removedCount = await Good.destroy({
+      where: {
+        // в req.params.id ляжет соответсвующая часть URL
+        id: Number(req.params.id),
+      },
+    });
+
+    if (removedCount === 0) {
+      res
+        .status(404)
+        .json({ success: false, message: 'Нет такой задачи' });
+    } else {
+      res.json({ success: true });
+    }
+  } catch (er) {
+    next(er);
+  }
 });
 
 module.exports = ordersRouter;

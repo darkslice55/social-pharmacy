@@ -60,7 +60,7 @@ function Header() {
                 </div>
                 <div className="header-action-area">
                   <div className="header-action-cart">
-                    <a className="cart-icon" href="javascript:void(0);">
+                    <a className="cart-icon basket-icon" href="/orders/">
                       <i className="icofont-shopping-cart" />
                     </a>
                   </div>
@@ -71,6 +71,7 @@ function Header() {
           </div>
         </div>
       </div>
+        <script defer src="/js/header.js" />
     </header>
   );
 }

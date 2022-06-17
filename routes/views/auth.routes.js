@@ -1,10 +1,10 @@
 const authRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
+const nodemailer = require('nodemailer');
 const { User } = require('../../db/models');
 const Login = require('../../views/Login');
 const Register = require('../../views/Register');
-const nodemailer = require('nodemailer')
 
 authRouter
   .route('/register')
@@ -69,7 +69,7 @@ authRouter
         //     raw: `
         //         Content-Type: text/plain
         //         Content-Disposition: attachment;
-      
+
         //         Message from file.
         //       `,
         //   },
@@ -78,7 +78,6 @@ authRouter
     } catch (err) {
       console.log(err);
     }
-
 
     res.send({ success: true });
   });

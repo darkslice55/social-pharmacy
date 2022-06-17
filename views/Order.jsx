@@ -17,16 +17,18 @@ function Order({ orders }) {
 
       <ul className="goods list-group">
         {orders.map((orderOne) => (
-          <li>
+          <li className={`listOforderList`}>
             <a className={'btn btn-primary btn-xl buttonOforderList'}
+              name="listFalse"
               data-id={orderOne.id}
-              href={`/orders/${orderOne.id}/goods`}
+              // href={`/orders/${orderOne.id}/goods`}
               key={orderOne.id}>
               {`Заказ № ${orderOne.id} на сумму ${orderOne.total_price}`}
             </a>
             <br></br>
           </li>
         ))}
+
         <div className="orderList">
 
         </div>

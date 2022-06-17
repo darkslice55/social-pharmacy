@@ -37,7 +37,7 @@ function Main({ goods }) {
                     </div>
                   </li>
                   <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle sort" href="/api/goods/sort" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">Сортировка</a>
+                    <a className="nav-link dropdown-toggle sort" href="#" id="dropdown09" data-bs-toggle="dropdown" data-direct="up" aria-expanded="false">Сортировка по цене</a>
                   </li>
                 </ul>
                 <form role="search" className="search">
