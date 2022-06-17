@@ -36,7 +36,6 @@ goodsRouter
         is_done: false,
       },
     });
-    console.log('currentOrder', currentOrder);
     if (!currentOrder) {
       currentOrder = await Order.create({
         user_id: req.session.userId,

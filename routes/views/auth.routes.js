@@ -100,4 +100,3 @@ authRouter.get('/logout', (req, res) => {
 });
 
 module.exports = authRouter;
-module.exports = sendEmail;

@@ -6,9 +6,14 @@ const Header = require('./Header');
 function Basket({ currentBasket }) {
   let summ = 0;
   if (currentBasket) {
-    summ = currentBasket.reduce((acc, good) => (
-      acc + Number(good.total_amount) * Number(good['Good.price']) * (Number(good['Good.discont']) / 100)
-    ), 0);
+    summ = currentBasket.reduce((acc, good) => {
+      const currAmount = Number(good.total_amount);
+      const currPrice = Number(good['Good.price']);
+      const currDiscont = Number(good['Good.discont']) / 100;
+      const finalPrice = currPrice - currPrice * currDiscont;
+      return acc + currAmount * finalPrice;
+      // acc + Number(good.total_amount) * (Number(good['Good.price']) - (Number(good['Good.price']) * (Number(good['Good.discont']) / 100)))))
+  }, 0);
   }
   return (
     <Layout>
@@ -53,7 +58,7 @@ function Basket({ currentBasket }) {
                     <p>Общая стоимость</p>
                   </div>
                   <div className="basket">
-                    <p className="price-value"><span className="total-price">{Number(good.total_amount) * Number(good['Good.price']) - (Number(good['Good.price']) * (Number(good['Good.discont']) / 100))}</span>₽</p>
+                    <p className="price-value"><span className="total-price">{Number(good.total_amount) * (Number(good['Good.price']) - (Number(good['Good.price']) * (Number(good['Good.discont']) / 100)))}</span>₽</p>
                   </div>
                 </div>
                 <div className="delet">

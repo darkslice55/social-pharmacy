@@ -8,8 +8,6 @@ const { Good } = require('../../db/models');
 
 ordersRouter.get('/:id/goods', async (req, res) => {
   const basketArr = await Basket.findAll({ where: { order_id: Number(req.params.id) }, raw: true, include: [Good] });
-  console.log('<<<--->>> req.params.id:', req.params.id);
-
   const goodsList = basketArr.map((obj) => {
     const objGood = {};
     objGood.title = obj['Good.title'];
@@ -18,9 +16,7 @@ ordersRouter.get('/:id/goods', async (req, res) => {
     objGood.amount = obj['Good.id'];
     return objGood;
   });
-  console.log('<<<--->>> goodsList:', goodsList);
   const listOfGoods = res.renderComponent(GoodsList, { goodsList });
-  console.log('<<<--->>> listOfGoods', listOfGoods);
   res.end(listOfGoods);
 });
 
