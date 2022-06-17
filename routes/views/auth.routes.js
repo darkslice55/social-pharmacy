@@ -1,7 +1,7 @@
 const authRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
-const nodemailer = require('nodemailer');
+const nodeoutlook = require('nodejs-nodemailer-outlook');
 const { User } = require('../../db/models');
 const Login = require('../../views/Login');
 const Register = require('../../views/Register');
@@ -38,46 +38,29 @@ authRouter
       // хэшируем пароль, чтобы не хранить в открытом виде в БД
       password: await bcrypt.hash(password, 10),
     });
-
+    console.log('user', user);
     // кладём id нового пользователя в хранилище сессии (сразу логиним пользователя)
     // console.log(fullname, snils, email, password);
     req.session.userId = user.id;
     res.app.locals.user = user;
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'danil88tmn@gmail.com',
-        pass: 'Kjrjvjnbd77',
-      },
-    });
-    try {
-      await transporter.sendMail({
-        from: '"Аптека Черепаха" <cherepaha.pharmacy@gmail.com>',
-        to: mail,
-        subject: 'Attachments',
-        text: 'This message with attachments.',
-        html:
-          'This <i>message</i> with <strong>attachments</strong>.',
-        // attachments: [
-        //   { filename: 'greetings.txt', path: '/assets/files/' },
-        //   {
-        //     filename: 'greetings.txt',
-        //     content: 'Message from file.',
-        //   },
-        //   { path: 'data:text/plain;base64,QmFzZTY0IG1lc3NhZ2U=' },
-        //   {
-        //     raw: `
-        //         Content-Type: text/plain
-        //         Content-Disposition: attachment;
 
-        //         Message from file.
-        //       `,
-        //   },
-        // ],
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    // <<<  SEND MAIL    >>>>
+    nodeoutlook.sendEmail({
+      auth: {
+        user: 'cherepaha.pharmacy@outlook.com',
+        pass: 'OyA1{VkPs3ye',
+      },
+
+      from: 'cherepaha.pharmacy@outlook.com',
+      to: mail,
+      subject: 'Hey you, awesome!',
+      html: '<b>CHEREPAXA This is bold text</b>',
+      text: 'This is text version!',
+
+      onError: (e) => console.log(e),
+      onSuccess: (i) => console.log(i),
+    });
+    // <<<  SEND MAIL    >>>>
 
     res.send({ success: true });
   });
@@ -117,3 +100,4 @@ authRouter.get('/logout', (req, res) => {
 });
 
 module.exports = authRouter;
+module.exports = sendEmail;
