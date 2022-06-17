@@ -21,7 +21,6 @@ goodsRouter
       },
     });
   });
-
 goodsRouter
   .route('/:id/order')
   .post(async (req, res) => {
