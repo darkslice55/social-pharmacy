@@ -57,6 +57,7 @@ function Login() {
               </label>
             </div> */}
             <button className="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+            <a href="/auth/register">Зарегистрироваться</a>
           </form>
         </main>
       </body>

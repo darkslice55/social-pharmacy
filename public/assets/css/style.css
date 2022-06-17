@@ -9607,7 +9607,7 @@ table p {
   padding: 2px 4px;
   left: 10px;
   top: 10px;
-  background-color: #fff;
+  background-color:#e8e8e8;
   line-height: 1;
   border-radius: 3px;
   position: absolute;
@@ -9622,9 +9622,44 @@ table p {
 }
 
 .card_img {
-  margin: 5px;
+  height: 200px;
 }
 
 .hidden {
   display: none;
+}
+
+.card-block {
+  width: 80%; 
+  height: 300px; 
+  border-radius: 21px 21px 0 0;
+}
+
+.stock-card {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.free-price {
+  padding: 2px 4px;
+  left: 10px;
+  top: 33px;
+  background-color:#c32026;
+  line-height: 1;
+  border-radius: 3px;
+  position: absolute;
+  color: whitesmoke;
+}
+
+.amount {
+  max-width: 70px;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.form-check-input {
+  margin-top: 8px;
+  margin-right: 10px;
 }

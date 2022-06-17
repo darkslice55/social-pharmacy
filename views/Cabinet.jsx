@@ -15,6 +15,11 @@ function Cabinet() {
         <br></br>
         <a className="btn btn-primary btn-xl" href={`/users/${user.id}/orders`}>Вывести список заказов</a>
       </ul>
+      <div className="tasks list-group">
+        {tasks.map((task) => (
+          <Task key={task.id} task={task} />
+        ))}
+      </div>
     </Layout>
   );
 }

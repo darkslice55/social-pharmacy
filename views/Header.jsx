@@ -45,7 +45,7 @@ function Header() {
             <div className="col-5 col-sm-3 col-md-3 col-lg-2">
               <div className="header-logo-area">
                 <a href="/">
-                  <img className="logo-main" src="logo.svg" alt="Logo" />
+                  <img className="logo-main" src="/logo.svg" alt="Logo" />
                 </a>
               </div>
             </div>

@@ -1,9 +1,12 @@
 const authRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
+// const nodemailer = require('nodemailer');
+const nodeoutlook = require('nodejs-nodemailer-outlook');
 const { User } = require('../../db/models');
 const Login = require('../../views/Login');
 const Register = require('../../views/Register');
+const fs = require('fs');
 
 authRouter
   .route('/register')
@@ -37,12 +40,29 @@ authRouter
       // хэшируем пароль, чтобы не хранить в открытом виде в БД
       password: await bcrypt.hash(password, 10),
     });
-
+    console.log('user', user);
     // кладём id нового пользователя в хранилище сессии (сразу логиним пользователя)
     // console.log(fullname, snils, email, password);
     req.session.userId = user.id;
     res.app.locals.user = user;
-    console.log(res.locals.user);
+
+    // <<<  NEW CODE    >>>>
+    nodeoutlook.sendEmail({
+      auth: {
+        user: 'cherepaha.pharmacy@outlook.com',
+        pass: 'OyA1{VkPs3ye',
+      },
+      from: 'cherepaha.pharmacy@outlook.com',
+      to: mail,
+      subject: 'Hey you, awesome!',
+      html: '<b>CHEREPAXA This is bold text</b>',
+      text: 'This is text version!',
+
+      onError: (e) => console.log(e),
+      onSuccess: (i) => console.log(i),
+    });
+    // <<<  NEW CODE    >>>>
+
     res.send({ success: true });
   });
 

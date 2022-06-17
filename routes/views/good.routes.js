@@ -4,6 +4,7 @@ const {
 } = require('../../db/models');
 const Main = require('../../views/Main');
 const NewGood = require('../../views/NewGood');
+const GoodLong = require('../../views/GoodLong');
 
 goodsRouter
   .route('/')
@@ -29,12 +30,15 @@ goodsRouter
     res.renderComponent(Error);
   });
 
-// goodsRouter
-//   .route('/:id')
-//   .get(async (req, res) => {
-//     const good = await Good.findByPk(Number(req.params.id));
-//     res.send(good);
-//   })
+goodsRouter
+  .route('/:id')
+  .get(async (req, res) => {
+    console.log('IDDDDD', req.params.id);
+    const good = await Good.findByPk(Number(req.params.id));
+    console.log(good);
+    res.renderComponent(GoodLong, { good });
+    // res.send(good);
+  });
 //   .post((req, res) => {
 // //  вылетает ошибка
 //   });
