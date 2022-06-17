@@ -36,28 +36,25 @@ function Main({ goods }) {
                     </div>
                   </li>
                   <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">Сортировка</a>
-                    <ul className="dropdown-menu" aria-labelledby="dropdown09">
-                      <li><a className="dropdown-item" href="#">Action</a></li>
-                      <li><a className="dropdown-item" href="#">Another action</a></li>
-                      <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <a className="nav-link dropdown-toggle sort" href="/api/goods/sort" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">Сортировка</a>
                   </li>
                 </ul>
-                <form role="search">
-                  <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                <form role="search" className="search">
+                  <input className="form-control search" type="search" placeholder="Поиск лекарств" aria-label="Поиск" />
                 </form>
               </div>
             </div>
           </nav>
 
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div className="card-list row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {goods.map((good) => (
               <Good key={good.id} good={good} />
             ))}
           </div>
         </div>
       </div>
+      <script defer src="/js/main.js" />
+      <script defer src="/js/good.js" />
 
     </Layout>
   );
