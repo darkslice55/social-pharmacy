@@ -1,25 +1,41 @@
 const React = require('react');
 const Layout = require('./Layout');
 const { Context } = require('../middlewares/reactSsr');
-// const Order = require('../db/models/');
+const Header = require('./Header');
+const { Order, Good } = require('../db/models');
+const GoodsList = require('./GoodsList');
 
-function Cabinet() {
+function Cabinet({ orders, good }) {
   const { user } = React.useContext(Context);
   return (
     <Layout>
-      <a className="btn btn-primary btn-xl" href={`/users/${user.id}`}>{user.fullname}</a>&nbsp;&nbsp;&nbsp;
-      <a className="btn btn-primary btn-xl" href="/auth/logout">Log out</a>&nbsp;&nbsp;&nbsp;
-      <a className="btn btn-primary btn-xl" href="/">Home</a>
+      <Header />
       <ul className="goods list-group">
-        <h1 className="btn btn-primary btn-xl">Вы модератор</h1>
-        <br></br>
-        <a className="btn btn-primary btn-xl" href={`/users/${user.id}/orders`}>Вывести список заказов</a>
+        <h1 className="cab">Личный Кабинет</h1>
+        <br />
+        <ul>
+          <ol>Полное имя: {user.fullname}</ol>
+          <ol>Почтовый ящик: {user.mail}</ol>
+          <ol>Снилс: {user.snils}</ol>
+          <ol>{user.isAdmin}</ol>
+          <ol>Дата регистрации: {user.updatedAt.toString()}</ol>
+        </ul>
+        <h3 className="history">Истроя Заказов</h3>
+
       </ul>
-      <div className="tasks list-group">
-        {tasks.map((task) => (
-          <Good key={task.id} task={task} />
+
+      {/* <ul className="123">
+        {orders.map((el) => (
+          <div>
+            <ol className="ord">{el.id}</ol>
+            <ol className="ord">{good[el['Baskets.good_id'] - 1].dataValues.title}</ol>
+            <ol className="ord">{el.total_amount}</ol>
+            <ol className="ord">{el['Baskets.total_amount']}</ol>
+          </div>
         ))}
-      </div>
+      </ul> */}
+      {/* <a className="btn btn-primary btn-xl" href={`/users/${user.id}/orders`}>Вывести список заказов</a> */}
+      <GoodsList good={good} />
     </Layout>
   );
 }

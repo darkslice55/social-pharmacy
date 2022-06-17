@@ -94,6 +94,7 @@ authRouter
 
 authRouter.get('/logout', (req, res) => {
   req.session.destroy();
+  res.clearCookie('user_sid')
   delete res.app.locals.user;
   res.redirect('/');
 });

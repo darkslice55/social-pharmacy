@@ -11,7 +11,6 @@ function Main({ goods }) {
       <Header />
       <div className="album py-5 bg-light">
         <div className="container">
-          krasivaya obeziana
           <nav className="navbar navbar-expand-lg bg-light rounded" aria-label="Eleventh navbar example">
             <div className="container-fluid">
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
