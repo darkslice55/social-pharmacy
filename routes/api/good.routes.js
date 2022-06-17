@@ -21,5 +21,4 @@ goodsRouter
       },
     });
   });
-
 module.exports = goodsRouter;
