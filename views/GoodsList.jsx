@@ -1,23 +1,28 @@
 const React = require('react');
 // const Good = require('./Good');
 
-function GoodsList({ goodsList }) {
+function GoodsList({ good }) {
   return (
-    <ol className="list-group list-group-numbered">
-      {goodsList.map((good) => (
-        <li className="list-group-item">
-          <a
-            className="stretched-link"
-            data-id={good.id}
-            href={`/orders/${good.id}/goods`}
-            key={good.id}
-          >
-            {`${good.title} в количестве ${good.amount}шт. на сумму ${good.price}₽`}
-          </a>
-        </li>
-      ))}
-      <br />
-    </ol>
+    <div className="container">
+      <ol className="list-group list-group-numbered">
+        {good.map((el) => (
+
+          <li className="list-group-item">
+            <a
+              className="stretched-link"
+              data-id={el.id}
+              href={`/goods/${el.id}`}
+            // href={`goods/${good.id}`
+              key={el.id}
+            >
+              {`${el.title} в количестве ${el.amount}шт. на сумму ${el.price}₽`}
+            </a>
+          </li>
+
+        ))}
+        <br />
+      </ol>
+    </div>
   );
 }
 

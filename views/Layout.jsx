@@ -39,6 +39,7 @@ function Layout({ children }) {
         <link href="/assets/css/style.css" rel="stylesheet" />
 
         <link href="/stylesheets/basket.css" rel="stylesheet" />
+        <link href="/stylesheets/cab.css" rel="stylesheet" />
 
         {/* <link rel="stylesheet" type="text/css" href="/style.css" /> */}
 
