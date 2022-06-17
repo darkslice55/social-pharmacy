@@ -8,7 +8,8 @@ function Cabinet() {
   return (
     <Layout>
       <a className="btn btn-primary btn-xl" href={`/users/${user.id}`}>{user.fullname}</a>&nbsp;&nbsp;&nbsp;
-      <a className="btn btn-primary btn-xl" href="/auth/logout">Log out</a>
+      <a className="btn btn-primary btn-xl" href="/auth/logout">Log out</a>&nbsp;&nbsp;&nbsp;
+      <a className="btn btn-primary btn-xl" href="/">Home</a>
       <ul className="goods list-group">
         <h1 className="btn btn-primary btn-xl">Вы модератор</h1>
         <br></br>
