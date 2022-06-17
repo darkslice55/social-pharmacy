@@ -14,9 +14,11 @@ if (form) {
       isValid = false;
     }
 
+    const {method, action} = event.target;
+
     if (isValid) {
-      const response = await fetch(form.action, {
-        method: 'POST',
+      const response = await fetch(action, {
+        method,
         body: JSON.stringify({
           fullname: form.fullname.value,
           snils: form.snils.value,
